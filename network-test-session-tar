@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$(whoami)" != "root" ]; then
+    echo "use sudo or become root before running $0"
+    exit 1
+fi
+
+tar_file="/var/tmp/network-test-session_$(date +'%m-%d-%Y_%T').tar.gz"
+
+cd /var/log/upstart
+tar -czf "$tar_file" network-test-session*
+
+echo "Logs saved to $tar_file"

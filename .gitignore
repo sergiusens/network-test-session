@@ -1,0 +1,6 @@
+*.swp
+debian/files
+debian/network-test-session.debhelper.log
+debian/network-test-session.*.debhelper
+debian/*.substvars
+debian/network-test-session/

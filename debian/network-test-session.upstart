@@ -1,0 +1,31 @@
+# lxc-android-config - LXC Android Config and Container Initialization
+#
+# Configure and initialize the Android container for Ubuntu Touch
+
+description	"ofono test session"
+author "Sergio Schvezov <sergio.schvezov@canonical.com>"
+
+manual
+console log
+
+emits test-session-started
+
+pre-start script
+    echo "$(date +'%m-%d-%Y %T') Starting test session"
+    echo "$(date +'%m-%d-%Y %T') Listing modem state"
+    /usr/share/ofono/scripts/list-modems
+    echo "$(date +'%m-%d-%Y %T') Listing context state"
+    /usr/share/ofono/scripts/list-contexts
+    echo "$(date +'%m-%d-%Y %T') Test session started"
+end script
+
+exec /usr/share/ofono/scripts/monitor-ofono-log
+
+post-stop script
+    echo "$(date +'%m-%d-%Y %T') Ending test session"
+    echo "$(date +'%m-%d-%Y %T') Listing modem state"
+    /usr/share/ofono/scripts/list-modems
+    echo "$(date +'%m-%d-%Y %T') Listing context state"
+    /usr/share/ofono/scripts/list-contexts
+    echo "$(date +'%m-%d-%Y %T') Test session ended"
+end script

@@ -1,0 +1,14 @@
+Source: network-test-session
+Section: utils
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: network-test-session
+Architecture: all
+Multi-Arch: foreign
+Depends: upstart, ofono-scripts
+Description: tool to start and stop testing sessions
+ This package contains the scripts to start and stop testing sessions
+ with ofono

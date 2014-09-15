@@ -1,0 +1,2 @@
+monitor-ofono-log /usr/share/ofono/scripts/
+network-test-session-tar /usr/bin/
