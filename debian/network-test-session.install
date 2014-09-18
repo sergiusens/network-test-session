@@ -1,2 +1,3 @@
 monitor-ofono-log /usr/share/ofono/scripts/
-network-test-session-tar /usr/bin/
+network-test-session /usr/bin/
+location-test-session.conf /usr/share/upstart/sessions/

@@ -1,0 +1,58 @@
+#!/bin/sh
+
+if [ "$(whoami)" != "root" ]; then
+    echo "use sudo or become root before running $0"
+    exit 1
+fi
+
+collect() {
+    tar_file="/var/tmp/network-test-session_$(date +'%m-%d-%Y_%T').tar.gz"
+    
+    log_dir=$(mktemp -d)
+    trap 'rm -rf "$log_dir"' EXIT
+
+    cp /var/log/upstart/network-test-session* "$log_dir"
+    cp /home/phablet/.cache/upstart/location-test-session* "$log_dir"
+    cp /var/log/syslog "$log_dir"
+
+    cd "$log_dir"
+    tar -czf "$tar_file" ./*
+    if [ $? != 0 ]; then
+        echo "Failed to collect test artifacts"
+        exit 1
+    fi
+
+    echo "Logs saved to $tar_file"
+    exit 0
+}
+
+begin_session() {
+    start network-test-session
+    sudo -iu phablet start location-test-session
+}
+
+end_session() {
+    stop network-test-session
+    sudo -iu phablet stop location-test-session
+
+    collect
+}
+
+case "$1" in
+    collect)
+        collect
+        shift
+        ;;
+    start)
+        begin_session
+        shift
+        ;;
+    stop)
+        end_session
+        shift
+        ;;
+    *)
+        echo "Choose from start|stop|collect"
+        exit 1
+        ;;
+esac

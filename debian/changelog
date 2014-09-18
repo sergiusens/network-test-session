@@ -1,3 +1,9 @@
+network-test-session (0.2) utopic; urgency=medium
+
+  * Integrated location 
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Thu, 18 Sep 2014 00:01:05 -0300
+
 network-test-session (0.1) utopic; urgency=medium
 
   * Initial release

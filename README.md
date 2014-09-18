@@ -3,17 +3,18 @@
 To use this all you need to do is install or have the package installed and
 then inside a phablet-shell do
 
-    sudo start netork-test-session
+    sudo netork-test-session start
 
 Do all the required network testing, once done
 
-    sudo stop netork-test-session
+    sudo netork-test-session stop
 
-And to get a copy of the needed files run
+Stopping will collect the logs and print out their location, at any time logs
+can be collected by running
 
-    sudo network-test-session-tar
+    sudo network-test-session collect
 
-that last command will output the location of the tar'ed up logs.
+this command will also output the location of the tar'ed up logs.
 
 # Building
 

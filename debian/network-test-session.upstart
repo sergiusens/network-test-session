@@ -1,7 +1,3 @@
-# lxc-android-config - LXC Android Config and Container Initialization
-#
-# Configure and initialize the Android container for Ubuntu Touch
-
 description	"ofono test session"
 author "Sergio Schvezov <sergio.schvezov@canonical.com>"
 

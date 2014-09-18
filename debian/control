@@ -8,7 +8,7 @@ Standards-Version: 3.9.5
 Package: network-test-session
 Architecture: all
 Multi-Arch: foreign
-Depends: upstart, ofono-scripts
+Depends: upstart, ofono-scripts, ubuntu-location-service-tests
 Description: tool to start and stop testing sessions
  This package contains the scripts to start and stop testing sessions
- with ofono
+ with ofono and the location service
