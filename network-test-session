@@ -13,6 +13,7 @@ collect() {
 
     cp /var/log/upstart/network-test-session* "$log_dir"
     cp /home/phablet/.cache/upstart/location-test-session* "$log_dir"
+    cp /home/phablet/.cache/upstart/nuntium* "$log_dir"
     cp /var/log/syslog "$log_dir"
 
     cd "$log_dir"
