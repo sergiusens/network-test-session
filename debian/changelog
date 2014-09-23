@@ -1,3 +1,10 @@
+network-test-session (0.3) utopic; urgency=medium
+
+  * Adding nuntium logs to collect. 
+  * Saving logs to ~phablet.
+
+ -- Sergio Schvezov <sergio.schvezov@canonical.com>  Tue, 23 Sep 2014 02:03:32 -0300
+
 network-test-session (0.2) utopic; urgency=medium
 
   * Integrated location 
