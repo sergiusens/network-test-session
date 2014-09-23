@@ -6,7 +6,7 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 collect() {
-    tar_file="/var/tmp/network-test-session_$(date +'%m-%d-%Y_%T').tar.gz"
+    tar_file="/home/phablet/network-test-session_$(date +'%m-%d-%Y_%T').tar.gz"
     
     log_dir=$(mktemp -d)
     trap 'rm -rf "$log_dir"' EXIT
