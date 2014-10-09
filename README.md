@@ -22,3 +22,16 @@ If you want to build this package, just run
 
     debuild
 
+# Installing
+
+## Ubuntu Touch
+
+This package is built in a PPA already, you can install the latest from there
+by executing the following as root:
+
+    mount -o remount,rw /
+    echo "deb http://ppa.launchpad.net/phablet-team/testtools/ubuntu utopic main" > /etc/apt/sources.list.d/phablet-team-testools.list
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5E51A24C
+    apt update
+    apt install network-test-session
+    reboot
